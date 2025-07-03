@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jantar dos Papais - Menu</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #FFEBCD, #FFD700);
+    color: #4B3621;
+    margin: 0; padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+  }
+  section {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    margin: 15px auto;
+    padding: 15px 25px;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  h2 {
+    border-bottom: 2px solid #FFA500;
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+  }
+  label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+  }
+  input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  button {
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #e69500;
+  }
+  #confirmation {
+    text-align: center;
+    margin-top: 15px;
+    color: #228B22;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: none;
+  }
+</style>
+</head>
+<body>
+  <h1>Jantar dos Papais</h1>
+
+  <section>
+    <h2>Entradas</h2>
+    <label><input type="radio" name="entrada" value="Medalhões de Banana Caramelizada" /> Medalhões de Banana Caramelizada</label>
+  </section>
+
+  <section>
+    <h2>Prato Principal</h2>
+    <label><input type="radio" name="prato" value="Bife Altinho de Scotch Fillet" /> Bife Altinho de Scotch Fillet</label>
+  </section>
+
+  <section>
+    <h2>Sobremesa</h2>
+    <label><input type="radio" name="sobremesa" value="Chocolate Bites Strawberry" /> Chocolate Bites Strawberry</label>
+  </section>
+
+  <section>
+    <h2>Bebidas</h2>
+    <label><input type="radio" name="bebida" value="Água gelada" /> Água gelada</label>
+    <label><input type="radio" name="bebida" value="Sucos em geral" /> Sucos em geral</label>
+  </section>
+
+  <button id="submitBtn">Enviar pedido à cozinha</button>
+
+  <div id="confirmation">Pedido enviado!</div>
+
+<script>
+  const btn = document.getElementById('submitBtn');
+  const confirmation = document.getElementById('confirmation');
+
+  btn.addEventListener('click', () => {
+    confirmation.style.display = 'block';
+    setTimeout(() => {
+      confirmation.style.display = 'none';
+    }, 3000);
+  });
+</script>
+
+</body>
+</html>
